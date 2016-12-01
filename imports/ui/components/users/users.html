@@ -1,0 +1,20 @@
+<div ng-hide="users.isLoggedIn">
+  <h2>Log in to see all users</h2>
+</div>
+
+<div ng-show="users.isLoggedIn">
+  <h2>Welcome to my application</h2>
+  <h3>Email Verified: {{users.isEmailVerified}}</h3>
+</div>
+
+<ul>
+  Users:
+  <li ng-repeat="user in users.users_all">
+    <div ng-if="user.emails" >
+      {{ user.emails[0].address}}
+    </div>
+    <div ng-if="user.services.google" >
+      {{ user.services.google.email}}
+    </div>
+  </li>
+</ul>
