@@ -25,7 +25,12 @@ class Auth {
       },
       currentUser() {
         return Meteor.user();
+      },
+       getServiceImageUrl(){
+        if (Meteor.user() && Meteor.user().services && Meteor.user().services.facebook)
+          return "http://graph.facebook.com/" + Meteor.user().services.facebook.id + "/picture/?type=large";
       }
+
     });
   }
 

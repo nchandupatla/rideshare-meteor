@@ -1,6 +1,10 @@
 <div layout="row">
   <md-button flex ui-sref="login" ng-hide="auth.isLoggedIn">Login</md-button>
   <md-button flex ui-sref="register" ng-hide="auth.isLoggedIn">Sign up</md-button>
+  
   <md-button flex ng-click="auth.logout()" ng-show="auth.isLoggedIn">Logout</md-button>
-  <div ng-show="auth.isLoggedIn">{{ auth.currentUser | displayNameFilter }}</div>
+  <div ng-show="auth.isLoggedIn">{{ auth.currentUser | displayNameFilter }}
+    <md-button><img src="{{auth.getServiceImageUrl}}" style="width: 34px; height: 34px;"></md-button>
+  </div>
+  <md-button ng-show="auth.isLoggedIn"></md-button>
 </div>

@@ -11,15 +11,6 @@ if (Meteor.isServer) {
             sendVerificationEmail: true
         })
 
-        ServiceConfiguration.configurations.upsert(
-            { service: "google" },
-            {
-                $set: {
-                    clientId: "125831784605-tird7vmiccms5dakj0he4feopf5mkvga.apps.googleusercontent.com",
-                    loginStyle: "popup",
-                    secret: "xlfE6giRVmM1nShsKAglZIqn"
-                }
-            }
-        );
+        
     })
 }

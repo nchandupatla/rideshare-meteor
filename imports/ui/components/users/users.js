@@ -35,6 +35,13 @@ class Users {
       getServiceData(){
         if (Meteor.user() && Meteor.user().services && Meteor.user().services.google)
           return Meteor.user().services.google;
+        else if (Meteor.user() && Meteor.user().services && Meteor.user().services.facebook)
+          return Meteor.user().services.facebook;
+      },
+
+      getServiceImageUrl(){
+        if (Meteor.user() && Meteor.user().services && Meteor.user().services.facebook)
+          return "http://graph.facebook.com/" + Meteor.user().services.facebook.id + "/picture/?type=large";
       }
 
       

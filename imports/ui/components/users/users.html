@@ -4,6 +4,7 @@
 
 <div ng-show="users.isLoggedIn">
   <h2>Welcome to my application</h2>
+  <!--<img src="{{users.getServiceImageUrl}}" >-->
   <h3>Email Verified: {{users.isEmailVerified}}</h3>
 </div>
 
@@ -15,6 +16,9 @@
     </div>
     <div ng-if="user.services.google" >
       {{ user.services.google.email}}
+    </div>
+    <div ng-if="user.services.facebook" >
+      {{ user.services.facebook.email}}
     </div>
   </li>
 </ul>
