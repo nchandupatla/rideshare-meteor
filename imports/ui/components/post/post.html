@@ -1,0 +1,22 @@
+ <div layout="column" layout-fill layout-margin layout-padding>
+     
+      <form name="postForm" layout="column" layout-fill layout-padding layout-margin>
+        <md-input-container >
+          <label>
+            Travelling from
+          </label>
+          <input type="text" ng-model="post.from" placeholder="Atlanta"  required/>
+        </md-input-container>
+
+        <md-input-container >
+          <label>
+            Travelling to
+          </label>
+          <input type="text" ng-model="post.to" placeholder="Newyork"  required/>
+        </md-input-container>
+        <div layout="row">
+          <md-button class="md-raised" ng-click="post.add()" 
+                ng-disabled="post.postForm.$invalid()">Submit</md-button>
+        </div>
+      </form>
+ </div>

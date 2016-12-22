@@ -3,7 +3,7 @@ import angularMeteor from 'angular-meteor';
 import uiRouter from 'angular-ui-router';
 
 import { Accounts } from 'meteor/accounts-base';
-
+import { Rides } from '../../../api/rides';
 import template from './users.html';
 
 class Users {
@@ -16,6 +16,9 @@ class Users {
     this.subscribe('users');
     this.subscribe('userData');
     
+    this.add=function(){
+      $state.go('post');
+    }
 
     this.helpers({
       users_all() {
@@ -29,6 +32,8 @@ class Users {
           return true;
         else if(Meteor.user() && Meteor.user().services && Meteor.user().services.google)
           return true;
+        else if(Meteor.user() && Meteor.user().services && Meteor.user().services.facebook)
+           return true;
         else 
           return false;
       },
@@ -42,6 +47,10 @@ class Users {
       getServiceImageUrl(){
         if (Meteor.user() && Meteor.user().services && Meteor.user().services.facebook)
           return "http://graph.facebook.com/" + Meteor.user().services.facebook.id + "/picture/?type=large";
+      },
+
+       rides() {
+        return Rides.find({});
       }
 
       

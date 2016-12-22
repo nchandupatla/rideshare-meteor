@@ -4,9 +4,17 @@
 
 <div ng-show="users.isLoggedIn">
   <h2>Welcome to my application</h2>
+  <md-button class="md-raised" ng-click="users.add()" >Add</md-button>
   <!--<img src="{{users.getServiceImageUrl}}" >-->
   <h3>Email Verified: {{users.isEmailVerified}}</h3>
 </div>
+
+<ul>
+  <li ng-repeat="ride in users.rides">
+    <p>{{ride.from}}</p>
+    <p>{{ride.to}}</p>
+  </li>
+</ul>
 
 <ul>
   Users:

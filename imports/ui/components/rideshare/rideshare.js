@@ -8,6 +8,7 @@ import template from './rideshare.html';
 import { name as Navigation } from '../navigation/navigation';
 import { name as Auth } from '../auth/auth';
 import { name as Users } from '../users/users';
+import { name as Post } from '../post/post';
 
 class rideshare {}
 
@@ -21,6 +22,7 @@ export default angular.module(name, [
   Navigation,
   Auth,
   Users,
+  Post,
   'accounts.ui'
 ]).component(name, {
   template,
